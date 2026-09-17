@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "statusMessage": "Checking AI-agent protocol...",
+            "command": "if [ -f CLAUDE.md ] && grep -q \"Alur Kerja Wajib\" CLAUDE.md 2>/dev/null; then exit 0; fi; printf '%s' '{\"systemMessage\": \"Repo ini belum punya protokol AI-agent (marker \\\"Alur Kerja Wajib\\\" tidak ditemukan di CLAUDE.md). Jalankan /init-project untuk scaffold CLAUDE.md/AGENTS.md/SECURITY.md standar sebelum lanjut kerja di sini.\"}'"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# System & Secrets
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+oauth_creds.json
+google_accounts.json
+state.json
+installation_id

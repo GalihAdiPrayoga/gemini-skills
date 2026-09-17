@@ -1,0 +1,57 @@
+name: CI
+
+# Menjalankan validate commands yang sama yang didokumentasikan di CLAUDE.md/SECURITY.md,
+# secara otomatis di setiap PR — supaya "predeploy" bukan cuma script lokal yang bisa dilewatkan.
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  protocol-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify AI-agent protocol is present
+        run: |
+          if ! grep -q "Alur Kerja Wajib" CLAUDE.md 2>/dev/null; then
+            echo "::error::CLAUDE.md is missing the AI-agent protocol marker ('Alur Kerja Wajib'). Run /init-project and commit the result before merging."
+            exit 1
+          fi
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: {{PKG_MANAGER}} install
+
+      - name: Lint
+        run: {{PKG_MANAGER}} run lint
+
+      - name: Typecheck
+        run: {{PKG_MANAGER}} run typecheck
+
+      - name: Build
+        run: {{PKG_MANAGER}} run build
+
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Dependency / filesystem scan (trivy)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scanners: vuln,secret,misconfig
+          severity: HIGH,CRITICAL
+          exit-code: 1

@@ -1,0 +1,42 @@
+{
+  "ponytail": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "superpowers": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "caveman": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "context7": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "chrome-devtools-mcp": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "claude-code-workflows": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "conductor": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  },
+  "clasp": {
+    "overrides": [
+      "/C:/Users/teknos/*"
+    ]
+  }
+}
