@@ -1,6 +1,6 @@
-# 🌌 Gemini & Antigravity Skills Suite
+# 🌌 Gemini & Antigravity Autonomous AI System Suite
 
-Repository resmi kumpulan skills, ekstensi, dan arsitektur instruksi kognitif untuk **Gemini** & **Antigravity Autonomous AI System**.
+Repository resmi kumpulan **Cognitive Architecture (`GEMINI.md`, `AGENTS.md`)**, **53 Modular Skills**, **Plugins**, **Rules**, dan **Extensions / MCP** untuk ekosistem AI **Gemini** & **Antigravity**.
 
 ---
 
@@ -8,26 +8,46 @@ Repository resmi kumpulan skills, ekstensi, dan arsitektur instruksi kognitif un
 
 ```
 .
-├── GEMINI.md          # Cognitive System Architecture & Autonomous Protocol
-├── skills/            # Kumpulan modular engineering skills
-│   ├── brainstorm/    # Structured ideation & architectural brainstorming
-│   ├── canvas-design/ # High-end visual art & custom font typography
-│   ├── claude-md-improver/ # CLAUDE.md auditor & optimization
-│   ├── claude-superpowers-architect/ # Superpowers design & architecture
-│   ├── frontend-design/ # Premium production-grade UI & motion design
-│   ├── impeccable/    # Dark luxury design system & code perfection
-│   ├── init-project/  # Project setup & repo bootstrapping
-│   ├── natural-ui-copy/ # UI copy, microcopy, and tone engineering
-│   ├── plan-writer/   # Spec-to-Implementation planning protocol
-│   ├── qa-master/     # Systematic debugging & regression testing
-│   ├── skill-router/  # Dynamic multi-skill orchestration router
-│   └── spec-writer/   # Formal design spec documentation
+├── GEMINI.md          # Highest-Level Cognitive Instruction Architecture & Autonomous Protocol
+├── AGENTS.md          # Global Settings, Core Agent Context, UI/UX Intelligence & Collaboration Manual
+├── rules/             # Standar aturan & panduan eksekusi
+│   ├── ecc.md         # Enterprise Coding Craft & Backend Robustness
+│   ├── superpowers.md # TDD & Multi-Agent Parallel Execution Rules
+│   └── ui-ux-pro-max.md # Automatic UI/UX Design Intelligence & Motion Blueprint
 │
-├── extensions/        # Ekstensi runtime & MCP plugins
+├── plugins/           # Paket plugin integrasi
+│   ├── ecc/           # Enterprise backend & database pattern plugin
+│   ├── superpowers/   # Parallel agent orchestration plugin
+│   └── ui-ux-pro-max/ # Comprehensive design tokens & search intelligence engine
+│
+├── skills/            # 53 Modular Engineering & Creative Skills
+│   ├── animate/       ├── animate-expo/      ├── animation-vocabulary/
+│   ├── apple-design/  ├── ask-sonner/        ├── banner-design/
+│   ├── brainstorm/    ├── brainstorming/     ├── brand/
+│   ├── canvas-design/ ├── claude-md-improver/├── claude-superpowers-architect/
+│   ├── context7-mcp/  ├── design/            ├── design-system/
+│   ├── dispatching-parallel-agents/          ├── ecc/
+│   ├── emil-design-eng/ ├── executing-plans/ ├── find-animation-opportunities/
+│   ├── finishing-a-development-branch/       ├── frontend-design/
+│   ├── impeccable/    ├── improve-animations/├── init-project/
+│   ├── natural-ui-copy/ ├── pick-ui-library/ ├── plan-writer/
+│   ├── prototype/     ├── qa-master/         ├── receiving-code-review/
+│   ├── requesting-code-review/               ├── review-animations/
+│   ├── sdd-self-improvement-assistant/      ├── skill-router/
+│   ├── skill-upgrader/├── slides/            ├── spec-writer/
+│   ├── subagent-driven-development/          ├── superpowers/
+│   ├── systematic-debugging/                 ├── template-convert/
+│   ├── test-driven-development/              ├── ui-styling/
+│   ├── ui-ux-pro-max/ ├── using-git-worktrees/ ├── using-superpowers/
+│   ├── verification-before-completion/       ├── weekly-report/
+│   ├── write-swift/   ├── writing-plans/     ├── writing-plans-self-improvement-assistant/
+│   └── writing-skills/
+│
+├── extensions/        # 10 Runtime Extensions & MCP Workflows
 │   ├── caveman/       # High-density token & terse output engine
 │   ├── chrome-devtools-mcp/ # Live browser DOM & CSS debugging via CDP
 │   ├── clasp/         # Google Apps Script automation
-│   ├── claude-code-workflows/ # Multi-agent orchestration workflows
+│   ├── claude-code-workflows/ # Multi-agent orchestration workflows & templates
 │   ├── conductor/     # Background task & service conductor
 │   ├── context7/      # Context7 documentation & code query MCP
 │   ├── last30days-skill/ # Research & news aggregation
@@ -42,7 +62,6 @@ Repository resmi kumpulan skills, ekstensi, dan arsitektur instruksi kognitif un
 
 ## ⚡ Alur Kerja Utama (Mandatory Protocol)
 
-Setiap proses rekayasa perangkat lunak mengikuti siklus:
 1. **Context & Spec:** Membaca konteks atau membuat formal spec via `/spec-writer`.
 2. **Implementation Plan:** Menyusun rencana langkah demi langkah via `/plan-writer`.
 3. **Autonomous Execution:** Eksekusi kode via parallel sub-agents dengan TDD.

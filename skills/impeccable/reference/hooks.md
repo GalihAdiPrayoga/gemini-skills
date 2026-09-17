@@ -1,4 +1,4 @@
-# /impeccable hooks
+# $impeccable hooks
 
 Manage the **design detector hook** for the current project.
 
@@ -32,7 +32,7 @@ The first argument is the action. Defaults to `status`.
 | `ignore-value <id> <value> [--shared] [--reason "..."]` | Append a rule/value suppression to shared `.impeccable/config.json`. |
 | `ignore-value <id> <value> --local [--reason "..."]` | Append a private rule/value suppression to `.impeccable/config.local.json`. |
 | `ignore-value <id> "*" --file <glob> [--file <glob>...]` | Turn one rule off in matching files only, leaving it active everywhere else. Repeat `--file`, or use `--file=<glob>` / `--files=<glob>`. A bare `"*"` with no `--file` is refused: use `ignore-rule <id>` if you really mean project-wide. |
-| `reset` | Delete the project config, dedup cache, and Cursor pending queue, and remove the hook's entries from every provider manifest `on` installs, the committed Copilot file included (a team-shared `settings.json` that `on` never writes is never touched). |
+| `reset` | Delete the project config, dedup cache, and Cursor pending queue. |
 
 ## Flow
 
@@ -40,10 +40,10 @@ The first argument is the action. Defaults to `status`.
 2. Invoke the admin script and pass the user's output through verbatim:
 
    ```bash
-   node .gemini/skills/impeccable/scripts/hook-admin.mjs <action> [args...]
+   node .agents/skills/impeccable/scripts/hook-admin.mjs <action> [args...]
    ```
 
-3. If `<action>` is `off`, follow up with a one-line note: "Done. New edits will not trigger the design hook in this project until you run `/impeccable hooks on`."
+3. If `<action>` is `off`, follow up with a one-line note: "Done. New edits will not trigger the design hook in this project until you run `$impeccable hooks on`."
 4. If `<action>` is `on`, follow up with: "Done. The design hook will fire after the next Edit/Write on a UI file."
 5. If `<action>` is `ignore-value`, `ignore-file`, or `ignore-rule`, just print the script output. The default scope is shared `.impeccable/config.json`; add `--local` only when the user explicitly asks for a private exception.
 6. If `<action>` is `status`, just print the script output. Do not add commentary unless the user asked a follow-up question.
@@ -70,32 +70,32 @@ Prefer the narrowest exception:
 Example value-specific exception:
 
 ```bash
-node .gemini/skills/impeccable/scripts/hook-admin.mjs ignore-value overused-font Inter --shared --reason "User confirmed Inter is intentional"
+node .agents/skills/impeccable/scripts/hook-admin.mjs ignore-value overused-font Inter --shared --reason "User confirmed Inter is intentional"
 ```
 
 Example self-served exception, with the evidence named:
 
 ```bash
-node .gemini/skills/impeccable/scripts/hook-admin.mjs ignore-value bounce-easing bounce-ball --shared --reason "Agent: literal ball-bounce animation, bounce easing is the subject"
+node .agents/skills/impeccable/scripts/hook-admin.mjs ignore-value bounce-easing bounce-ball --shared --reason "Agent: literal ball-bounce animation, bounce easing is the subject"
 ```
 
 Example whole-rule font exception:
 
 ```bash
-node .gemini/skills/impeccable/scripts/hook-admin.mjs ignore-rule overused-font --all-values --reason "User asked to ignore overused fonts generally"
+node .agents/skills/impeccable/scripts/hook-admin.mjs ignore-rule overused-font --all-values --reason "User asked to ignore overused fonts generally"
 ```
 
 Example one-rule-in-one-file exception, for a file that is still worth reviewing
 for everything else:
 
 ```bash
-node .gemini/skills/impeccable/scripts/hook-admin.mjs ignore-value design-system-font-size "*" --file "src/overlay/widget.js" --reason "Injected widget builds its own type scale; DESIGN.md's ramp describes the site"
+node .agents/skills/impeccable/scripts/hook-admin.mjs ignore-value design-system-font-size "*" --file "src/overlay/widget.js" --reason "Injected widget builds its own type scale; DESIGN.md's ramp describes the site"
 ```
 
 Example whole-file exception, for a file that is out of scope entirely:
 
 ```bash
-node .gemini/skills/impeccable/scripts/hook-admin.mjs ignore-file "src/legacy/Card.tsx"
+node .agents/skills/impeccable/scripts/hook-admin.mjs ignore-file "src/legacy/Card.tsx"
 ```
 
 ## Constraints
@@ -108,4 +108,4 @@ node .gemini/skills/impeccable/scripts/hook-admin.mjs ignore-file "src/legacy/Ca
 ## Failure modes
 
 - If `.impeccable/config.json` or `.impeccable/config.local.json` is unreadable or malformed, the hook ignores that file and uses the remaining valid config/defaults. `hook-admin.mjs status` will show malformed files as ignored.
-- If the user asks to "disable the hook" globally, lead with `/impeccable hooks off` (persistent for this project; writes `hook.enabled: false` to config). The legacy `IMPECCABLE_HOOK_DISABLED=1` env var also works as a one-shot override that follows the shell.
+- If the user asks to "disable the hook" globally, lead with `$impeccable hooks off` (persistent for this project; writes `hook.enabled: false` to config). The legacy `IMPECCABLE_HOOK_DISABLED=1` env var also works as a one-shot override that follows the shell.

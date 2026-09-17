@@ -1,0 +1,6 @@
+{
+  "name": "superpowers",
+  "displayName": "Superpowers Workflow System",
+  "version": "1.0.0",
+  "description": "Battle-tested workflows for software development: brainstorming, spec writing, plan writing, subagent-driven development, test-driven development, systematic debugging, code review, and verification."
+}

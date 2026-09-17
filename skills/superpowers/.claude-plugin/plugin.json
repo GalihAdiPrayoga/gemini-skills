@@ -1,0 +1,21 @@
+{
+  "name": "superpowers",
+  "description": "Core skills library for Claude Code (ECC-enhanced build synced from Codex): TDD, debugging, collaboration patterns, subagent-driven development, plan/SDD self-improvement memory, and proven techniques",
+  "version": "6.2.0-ecc",
+  "author": {
+    "name": "Jesse Vincent (upstream); synced/extended via local ECC skill set"
+  },
+  "homepage": "https://github.com/obra/superpowers",
+  "repository": "https://github.com/obra/superpowers",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "tdd",
+    "debugging",
+    "collaboration",
+    "best-practices",
+    "workflows",
+    "subagent-driven-development",
+    "self-improvement"
+  ]
+}

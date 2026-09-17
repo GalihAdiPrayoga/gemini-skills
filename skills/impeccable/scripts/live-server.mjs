@@ -768,7 +768,7 @@ function createRequestHandler({ detectScript, liveScriptParts }) {
         }),
       });
       res.writeHead(200, {
-        'Content-Type': 'application/javascript; charset=utf-8',
+        'Content-Type': 'application/javascript',
         'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
         'Pragma': 'no-cache',
       });
@@ -777,7 +777,7 @@ function createRequestHandler({ detectScript, liveScriptParts }) {
     }
     if (p === '/detect.js' || p === '/') {
       if (!detectScript) { res.writeHead(404); res.end('Not available'); return; }
-      res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+      res.writeHead(200, { 'Content-Type': 'application/javascript' });
       res.end(detectScript);
       return;
     }
