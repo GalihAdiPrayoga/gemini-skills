@@ -4,6 +4,22 @@ Repository resmi kumpulan **Cognitive Architecture (`GEMINI.md`, `AGENTS.md`)**,
 
 ---
 
+## ⚡ Quick 1-Command Installation via NPX
+
+Kamu bisa menginstall dan menyinkronkan seluruh skills, plugins, rules, dan extensions langsung ke direktori `.gemini` di sistem (Windows, macOS, Linux) hanya dengan satu perintah:
+
+```bash
+npx github:GalihAdiPrayoga/gemini-skills
+```
+
+> **Catatan:** Script otomatis mendeteksi lokasi `.gemini` di `%USERPROFILE%\.gemini` (Windows) atau `~/.gemini` (macOS/Linux).
+> Untuk menentukan folder target kustom:
+> ```bash
+> npx github:GalihAdiPrayoga/gemini-skills --target /path/to/.gemini
+> ```
+
+---
+
 ## 📂 Struktur Repositori
 
 ```

@@ -1,0 +1,31 @@
+{
+  "name": "gemini-skills",
+  "version": "1.0.0",
+  "description": "Cross-platform installer and sync tool for Gemini skills, plugins, rules, and extensions.",
+  "main": "bin/cli.js",
+  "bin": {
+    "gemini-skills": "./bin/cli.js"
+  },
+  "keywords": [
+    "gemini",
+    "gemini-skills",
+    "antigravity",
+    "ai-agent",
+    "skills",
+    "plugins",
+    "rules"
+  ],
+  "author": "Muhammad Galih Adi Prayoga (GalihMaximoff)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GalihAdiPrayoga/gemini-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GalihAdiPrayoga/gemini-skills/issues"
+  },
+  "homepage": "https://github.com/GalihAdiPrayoga/gemini-skills#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
